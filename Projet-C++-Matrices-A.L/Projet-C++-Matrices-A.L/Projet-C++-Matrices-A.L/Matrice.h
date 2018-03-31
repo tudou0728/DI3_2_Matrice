@@ -59,12 +59,12 @@ template <typename MType> CMatrice<MType>::~CMatrice(){
 }
 
 template <typename MType> CMatrice<MType>::CMatrice( CMatrice<MType> &MATarg){
-	eMATLignes=MATarg.eMATLignes;
-	eMATColonnes=MATarg.eMATColonnes;
-	pcMATTypeMatrice=MATarg.pcMATTypeMatrice;
+	eMATLignes=MATarg.eMATLignes;//private成员不可访问 这里写错了
+	eMATColonnes=MATarg.eMATColonnes;//private成员不可访问 这里写错了
+	pcMATTypeMatrice=MATarg.pcMATTypeMatrice;//private成员不可访问 这里写错了
 	if(MATarg.pMATMatrice!=NULL)
 	{
-		pMATMatrice=new MType*[MATarg.eMATLignes];
+		pMATMatrice=new MType*[MATarg.eMATLignes];//深拷贝
 		for(int i=0;i<MATarg.eMATLignes;i++){
 			pMATMatrice[i]=new MType[MATarg.eMATColonnes];
 			for(int j=0;j<eMATColonnes;j++){
@@ -96,11 +96,11 @@ template <typename MType> void CMatrice<MType>::MATModifierColonne(int eColonne)
 
 template <typename MType> void CMatrice<MType>::MATModifierMatrice(MType **MTYMatrice)
 {
-	pMATMatrice=MTYMatrice;
+	pMATMatrice=MTYMatrice; //这里写错了，应该采用深拷贝，但是程序中采用了浅拷贝。
 }
 
 
-
+//加法
 template <typename MType> CMatrice<MType>
 typename& CMatrice<MType>::MATMultiplier(MType &MTYvalue){
 	CMatrice<MType> *MATTemp=new CMatrice<MType>(*this);
@@ -113,7 +113,7 @@ typename& CMatrice<MType>::MATMultiplier(MType &MTYvalue){
 	}
 	return *MATTemp;
 }	
-
+//除法
 template <typename MType> CMatrice<MType>
 typename &CMatrice<MType>::MATDiviser(MType &MTYvalue){
 	CMatrice *MATTemp=new CMatrice<MType>(*this);
@@ -136,7 +136,7 @@ typename &CMatrice<MType>::MATDiviser(MType &MTYvalue){
 	}
 	return *MATTemp;
 }	
-
+//转置
 template <typename MType> CMatrice<MType>
 typename &CMatrice<MType>::MATTransposer(){
 	CMatrice *MATTemp=new CMatrice<MType>();
@@ -159,7 +159,7 @@ typename &CMatrice<MType>::MATTransposer(){
 }
 
 
-
+//矩阵相加
 template <typename MType> CMatrice<MType>
 typename &CMatrice<MType>:: operator+(CMatrice<MType> &MATarg){
 	CMatrice *MATTemp=new CMatrice<MType>(*this);
@@ -181,7 +181,7 @@ typename &CMatrice<MType>:: operator+(CMatrice<MType> &MATarg){
 	}  
 }
 
-
+//矩阵相减
 template <typename MType> CMatrice<MType>
 typename &CMatrice<MType>:: operator-(CMatrice<MType> &MATarg){
 	CMatrice *MATTemp=new CMatrice<MType>(*this);
@@ -206,16 +206,16 @@ typename &CMatrice<MType>:: operator-(CMatrice<MType> &MATarg){
 	}
 }
 
-
+//矩阵相乘
 template <typename MType> CMatrice<MType>
 typename &CMatrice<MType>:: operator*(CMatrice<MType> &MATarg)
 {
 	CMatrice *MATTemp=new CMatrice<MType>();
 	MATTemp->MATModifierType(this->pcMATTypeMatrice);
 	MATTemp->MATModifierLigne(this->eMATLignes);
-	MATTemp->MATModifierColonne(MATarg.eMATColonnes);
-	MATTemp->pMATMatrice=new MType*[MATTemp->eMATLignes];
-	if(this->eMATColonnes==MATarg.eMATLignes)
+	MATTemp->MATModifierColonne(MATarg.eMATColonnes);//这里写错了 私有成员不可访问
+	MATTemp->pMATMatrice=new MType*[MATTemp->eMATLignes];//这里写错了 私有成员不可访问
+	if(this->eMATColonnes==MATarg.eMATLignes)//这里写错了 私有成员不可访问
 	{
 		int i;
 		for(i=0;i<MATTemp->eMATLignes;i++)
@@ -241,7 +241,7 @@ typename &CMatrice<MType>:: operator*(CMatrice<MType> &MATarg)
 		throw a;
 	}
 }
-
+//打印矩阵
 template <typename MType> void CMatrice<MType>::MATAffichier(){
 	int i;
 	for(i=0;i<eMATLignes;i++){
@@ -254,11 +254,11 @@ template <typename MType> void CMatrice<MType>::MATAffichier(){
 		cout<<"\n";
 	}
 }
-
+//读文件
 template <typename MType> CMatrice<double> &CMatrice<MType>:: MATLire(char* pcFileNom)
 {
-	fstream file(pcFileNom,ios::in|ios::out);
-	if (!file.is_open())
+	fstream file(pcFileNom,ios::in|ios::out);//初始化
+	if (!file.is_open())//打开文件
 	{ 
 		Cexception a(1);
 		throw a;
@@ -280,7 +280,7 @@ template <typename MType> CMatrice<double> &CMatrice<MType>:: MATLire(char* pcFi
 		}
 		else
 		{
-			//type
+			//type 只可接收double型的矩阵
 			this->MATModifierType("double");
 			//lignes
 			file.getline(cTemp,90,'\n');
