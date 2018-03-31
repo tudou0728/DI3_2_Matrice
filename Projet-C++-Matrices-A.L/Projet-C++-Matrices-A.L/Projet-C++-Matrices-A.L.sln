@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Projet-C++-Matrices-A.L", "Projet-C++-Matrices-A.L\Projet-C++-Matrices-A.L.vcxproj", "{C2328C7F-860F-489D-9633-A12331706FB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2328C7F-860F-489D-9633-A12331706FB9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C2328C7F-860F-489D-9633-A12331706FB9}.Debug|Win32.Build.0 = Debug|Win32
+		{C2328C7F-860F-489D-9633-A12331706FB9}.Release|Win32.ActiveCfg = Release|Win32
+		{C2328C7F-860F-489D-9633-A12331706FB9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

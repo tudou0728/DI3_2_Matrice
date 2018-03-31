@@ -1,0 +1,41 @@
+﻿生成启动时间为 2017/4/4 星期二 23:15:23。
+     1>项目“E:\CHENGXU-VS\Projet-C++-Matrices-A.L\Projet-C++-Matrices-A.L\Projet-C++-Matrices-A.L.vcxproj”在节点 2 上(Build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release\Projet-C++-Matrices-A.L.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         G:\visual studio\VS2012-20170317\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Cexception.cpp main.cpp
+         Cexception.cpp
+         main.cpp
+     1>e:\chengxu-vs\projet-c++-matrices-a.l\projet-c++-matrices-a.l\Matrice.h(307): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+                 e:\chengxu-vs\projet-c++-matrices-a.l\projet-c++-matrices-a.l\Matrice.h(259): 编译类 模板 成员函数“CMatrice<MType> &CMatrice<MType>::MATLire(char *)”时
+                 with
+                 [
+                     MType=double
+                 ]
+                 main.cpp(24): 参见对正在编译的函数 模板 实例化“CMatrice<MType> &CMatrice<MType>::MATLire(char *)”的引用
+                 with
+                 [
+                     MType=double
+                 ]
+                 main.cpp(16): 参见对正在编译的类 模板 实例化“CMatrice<MType>”的引用
+                 with
+                 [
+                     MType=double
+                 ]
+     1>e:\chengxu-vs\projet-c++-matrices-a.l\projet-c++-matrices-a.l\Matrice.h(333): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+       Link:
+         G:\visual studio\VS2012-20170317\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\CHENGXU-VS\Projet-C++-Matrices-A.L\Release\Projet-C++-Matrices-A.L.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\CHENGXU-VS\Projet-C++-Matrices-A.L\Release\Projet-C++-Matrices-A.L.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\CHENGXU-VS\Projet-C++-Matrices-A.L\Release\Projet-C++-Matrices-A.L.lib" /MACHINE:X86 /SAFESEH Release\Cexception.obj
+         Release\main.obj
+         正在生成代码
+     1>e:\chengxu-vs\projet-c++-matrices-a.l\projet-c++-matrices-a.l\mystring.h(31): warning C4715: “ComparerStringAvecLong”: 不是所有的控件路径都返回值
+     1>e:\chengxu-vs\projet-c++-matrices-a.l\projet-c++-matrices-a.l\mystring.h(58): warning C4715: “ComparerAvecString”: 不是所有的控件路径都返回值
+         已完成代码的生成
+         Projet-C++-Matrices-A.L.vcxproj -> E:\CHENGXU-VS\Projet-C++-Matrices-A.L\Release\Projet-C++-Matrices-A.L.exe
+       FinalizeBuildStatus:
+         正在删除文件“Release\Projet-C++-Matrices-A.L.unsuccessfulbuild”。
+         正在对“Release\Projet-C++-Matrices-A.L.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\CHENGXU-VS\Projet-C++-Matrices-A.L\Projet-C++-Matrices-A.L\Projet-C++-Matrices-A.L.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:08.96
